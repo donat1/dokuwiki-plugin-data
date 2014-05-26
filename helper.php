@@ -392,7 +392,8 @@ class helper_plugin_data extends DokuWiki_Plugin {
         $data['sql'] = str_replace('%user%', $_SERVER['REMOTE_USER'], $data['sql']);
         // allow current date in filter:
         $data['sql'] = str_replace('%now%', dformat(null, '%Y-%m-%d'),$data['sql']);
-
+		$data['sql'] = str_replace('%month%', dformat(null, '%m'),$data['sql']);
+		$data['sql'] = str_replace('%year%', dformat(null, '%Y'),$data['sql']);
         // language filter
         $data['sql'] = $this->makeTranslationReplacement($data['sql']);
     }
